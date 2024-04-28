@@ -10,7 +10,7 @@
            wget -O gitea https://dl.gitea.io/gitea/1.15.6/gitea-1.15.6-linux-amd64
      Nastavíme souboru práva pro spuštění a přesunutí souboru do globálního umístění:
            chmod +x gitea
-           sudo mv gite /usr/local/bin/gitea
+           sudo mv gitea /usr/local/bin/gitea
    
 3. Vytvoříme uživatele a adresářouvou strukturu:
       První vytvoříme uživatele pro Gitea (s názvem "git"):
