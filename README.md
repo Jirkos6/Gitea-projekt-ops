@@ -1,4 +1,4 @@
-# Gitea projekt sítě
+# Gitea projekt ops
 1. Aktualizace systému a instalace potřebných balíčků:
      Nejprve zjistíme jestli je náš Debian aktuální:
          sudo apt update && sudo apt upgrade -y
