@@ -7,21 +7,20 @@
 - **Vytvoření uživatele a adresářové struktury:** Správně provedeno.
 - **Nastavení systemd služby a spuštění Gitea:** Dokončeno bez chyb.
 
-## Části, které se mohly nepovedly:
+## Části, které se nepovedly:
 
-- **Oprávnění:** Pokud nejsou správně nastavena, mohou způsobit problémy s přístupem a funkcionalitou Gitea.
-- **Konfigurační soubor služby:** Chyby mohou zabránit správnému spuštění Gitea.
+- **Oprávnění:** Při prvním pokusu způsobily problémy s přístupem a funkcionalitou Gitea.
 
 ## Co by mohlo zaskočit:
 
-- **Konfigurace firewallu nebo SELinux:** Může být komplikovaná pro uživatele nezvyklé na správu Linuxových serverů.
+- **Konfigurační soubor gitea** Může být komplikované pro uživatele
 
 ## Jiné varianty řešení:
 
-- **Kontejnerizace pomocí Dockeru:** Ulehčuje správu a portabilitu.
+- **instalace pomocí Dockeru:** Ulehčuje správu a portabilitu.
 - **Automatizace procesu:** Pomocí Ansible playbooků nebo jiných nástrojů pro správu konfigurace.
 
-## Výhody a nevýhody vaší varianty:
+## Výhody a nevýhody naší varianty:
 
 ### Výhody:
 
