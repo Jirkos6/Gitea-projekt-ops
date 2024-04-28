@@ -45,6 +45,7 @@
 
            [Install]
            WantedBy=multi-user.target
+      
       Povolíme a spustíme Gitea:
            sudo systemctl enable gitea
            sudo systemctl start gitea
