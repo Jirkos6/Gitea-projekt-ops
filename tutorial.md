@@ -10,7 +10,7 @@
    - sudo mysql_secure_installation
   
    - sudo mysql -u root -p
-   - CREATE DATABSE gitea;
+   - CREATE DATABASE gitea;
    - GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123' -|- heslo, pod kterým se přihlásíme do gitea
    - FLUSH PRIVILEGES;
    - EXIT;
