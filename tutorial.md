@@ -4,15 +4,26 @@
          sudo apt update && sudo apt upgrade -y
      Poté nainstalujeme potřebné balíčky, včetně Gitu a SSH:
           sudo apt install git openssh-server -y
+
    
-2. Stáhneme a nainstalujeme GItea:
+3. vytvoření databáze
+   - sudo mysql_secure_installation
+  
+   - sudo mysql -u root -p
+   - CREATE DATABSE gitea;
+   - GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123' -|- heslo, pod kterým se přihlásíme do gitea
+   - FLUSH PRIVILEGES;
+   - EXIT;
+
+   
+5. Stáhneme a nainstalujeme GItea:
      Provedeme pomocí příkazu wget:
            wget -O gitea https://dl.gitea.io/gitea/1.15.6/gitea-1.15.6-linux-amd64
      Nastavíme souboru práva pro spuštění a přesunutí souboru do globálního umístění:
            chmod +x gitea
            sudo mv gitea /usr/local/bin/gitea
    
-3. Vytvoříme uživatele a adresářouvou strukturu:
+6. Vytvoříme uživatele a adresářouvou strukturu:
       První vytvoříme uživatele pro Gitea (s názvem "git"):
            sudo adduser --system --shell /bin/bash --gecos 'Git Version
            Control' --group --disabled-password --home /home/git git
@@ -46,7 +57,7 @@
            [Install]
            WantedBy=multi-user.target
 
-5.
+7.
 sudo mkdir -p /etc/gitea/custom/conf
 sudo chown -R $USER:$USER /etc/gitea
  
@@ -55,6 +66,6 @@ sudo chown -R $USER:$USER /etc/gitea
            sudo systemctl enable gitea
            sudo systemctl start gitea
 
-6. Přístup k Gitea webu:
+8. Přístup k Gitea webu:
         - jakmile je Gitea spuštěna, dostaneme se k němu pomocí ip adresy ("ip a") a vašeho serveru na portu 3000
                 (ip_adresa:3000)
