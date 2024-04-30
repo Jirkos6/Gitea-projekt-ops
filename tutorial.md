@@ -15,15 +15,18 @@
    - FLUSH PRIVILEGES;
    - EXIT;
 
+4. vytvoření uživatele:
+   - sudo adduser \ --sytem \ --shell /bin/bash \ --gecos 'Git Version Control'\ --group \ --disable-password \ --home /home/git \git
+
    
-5. Stáhneme a nainstalujeme GItea:
+6. Stáhneme a nainstalujeme GItea:
      Provedeme pomocí příkazu wget:
            - wget -O gitea https://dl.gitea.io/gitea/1.15.6/gitea-1.15.6-linux-amd64
      Nastavíme souboru práva pro spuštění a přesunutí souboru do globálního umístění:
            - chmod +x gitea
            - sudo mv gitea /usr/local/bin/gitea
    
-6. Vytvoříme uživatele a adresářouvou strukturu:
+7. Vytvoříme uživatele a adresářouvou strukturu:
       První vytvoříme uživatele pro Gitea (s názvem "git"):
            - sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
       Nastavíme potřebnou strukturu adresáře:
@@ -56,7 +59,7 @@
            [Install]
            WantedBy=multi-user.target
 
-7.
+8.
 - sudo mkdir -p /etc/gitea/custom/conf
 - sudo chown -R $USER:$USER /etc/gitea
  
