@@ -16,7 +16,8 @@
    - EXIT;
 
 4. vytvoření uživatele:
-   - sudo adduser \ --sytem \ --shell /bin/bash \ --gecos 'Git Version Control'\ --group \ --disable-password \ --home /home/git \git
+   - sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
+
 
    
 6. Stáhneme a nainstalujeme GItea:
