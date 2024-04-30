@@ -45,11 +45,16 @@
 
            [Install]
            WantedBy=multi-user.target
+
+5.
+sudo mkdir -p /etc/gitea/custom/conf
+sudo chown -R $USER:$USER /etc/gitea
+ 
       
       Povolíme a spustíme Gitea:
            sudo systemctl enable gitea
            sudo systemctl start gitea
 
-5. Přístup k Gitea webu:
+6. Přístup k Gitea webu:
         - jakmile je Gitea spuštěna, dostaneme se k němu pomocí ip adresy ("ip a") a vašeho serveru na portu 3000
                 (ip_adresa:3000)
