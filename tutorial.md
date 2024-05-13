@@ -22,8 +22,8 @@
    - sudo apt install -y git mariadb-server nginx
    - sudo mysql_secure_installation (použijte tento příkaz separátně)
      
-     použijte tyto příkazy naráz:
      sudo mysql -u root -p
+     použijte tyto příkazy naráz:
      CREATE DATABASE gitea;
      GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123' -|- heslo, pod kterým se přihlásíme do gitea
      FLUSH PRIVILEGES;
