@@ -6,7 +6,7 @@
         - systemctl status ssh
      Pokud nesvítí ve výpisu zeleně "active (running)" musíme ssh zapnout
         - systemctl start ssh
-     Přikázem "ip a" zjistíme ip adresu, kterou se připojíme do PuTTY
+     Přikázem "ip a" zjistíme ip adresu, kterou se připojíme do PuTTY ve které pokračujeme
    
 2. Aktualizace systému a instalace potřebných balíčků:
      Nejprve zjistíme jestli je náš Debian aktuální:
