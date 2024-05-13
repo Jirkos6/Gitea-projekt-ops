@@ -23,11 +23,11 @@
    - sudo mysql_secure_installation (použijte tento příkaz separátně)
      
      použijte tyto příkazy naráz:
-   - sudo mysql -u root -p
-   - CREATE DATABASE gitea;
-   - GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123' -|- heslo, pod kterým se přihlásíme do gitea
-   - FLUSH PRIVILEGES;
-   - EXIT;
+     sudo mysql -u root -p
+     CREATE DATABASE gitea;
+     GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123' -|- heslo, pod kterým se přihlásíme do gitea
+     FLUSH PRIVILEGES;
+     EXIT;
 
 5. vytvoření uživatele:
    - sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
