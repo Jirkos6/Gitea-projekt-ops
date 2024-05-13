@@ -1,11 +1,22 @@
 # Gitea projekt sítě
-1. Aktualizace systému a instalace potřebných balíčků:
+1. Nainstalujeme na VirtualBox SSH abysme se mohli připojit přes PuTTY, do kterého se dají kódy vkládat
+     Nainstalujeme balíček openssh-server
+        - sudo apt update && sudo apt install openssh-server
+     Zjistíme jestli se služba spustila
+        - systemctl status ssh
+     Pokud nesvítí ve výpisu zeleně "active (running)" musíme ssh zapnout
+        - systemctl start ssh
+     Přikázem "ip a" zjistíme ip adresu, kterou se připojíme do PuTTY
+   
+2. Aktualizace systému a instalace potřebných balíčků:
      Nejprve zjistíme jestli je náš Debian aktuální:
         - sudo apt update && sudo apt upgrade -y
      Poté nainstalujeme potřebné balíčky, včetně Gitu a SSH:
         - sudo apt install git openssh-server -y
 
    
+
+
 3. vytvoření databáze
    - sudo mysql_secure_installation
   
@@ -20,14 +31,14 @@
 
 
    
-6. Stáhneme a nainstalujeme GItea:
+5. Stáhneme a nainstalujeme GItea:
      Provedeme pomocí příkazu wget:
            - wget -O gitea https://dl.gitea.io/gitea/1.15.6/gitea-1.15.6-linux-amd64
      Nastavíme souboru práva pro spuštění a přesunutí souboru do globálního umístění:
            - chmod +x gitea
            - sudo mv gitea /usr/local/bin/gitea
    
-7. Vytvoříme uživatele a adresářouvou strukturu:
+6. Vytvoříme uživatele a adresářouvou strukturu:
       První vytvoříme uživatele pro Gitea (s názvem "git"):
            - sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
       Nastavíme potřebnou strukturu adresáře:
@@ -38,10 +49,10 @@
            - sudo chown root:git /etc/gitea
            - sudo chmod 770 /etc/gitea
    
-   4. Nastavíme systemd službu:
-      Vytvoříme systemd konfigurační soubor pro Gitea:
+7. Nastavíme systemd službu:
+   Vytvoříme systemd konfigurační soubor pro Gitea:
            - sudo nano /etc/systemd/system/gitea.service
-      Vložíme následující konfiguraci služby:
+   Vložíme následující konfiguraci služby:
            [Unit]
            Description=Gitea (Git with a cup of tea)
            After=syslog.target
@@ -69,6 +80,6 @@
            - sudo systemctl enable gitea
            - sudo systemctl start gitea
 
-8. Přístup k Gitea webu:
+9. Přístup k Gitea webu:
         - jakmile je Gitea spuštěna, dostaneme se k němu pomocí ip adresy ("ip a") a vašeho serveru na portu 3000
                 (ip_adresa:3000)
