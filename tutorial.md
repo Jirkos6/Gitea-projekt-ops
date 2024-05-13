@@ -18,27 +18,30 @@
 
 
 3. vytvoření databáze
-   - sudo mysql_secure_installation
-  
+   - sudo apt update && sudo apt upgrade -y
+   - sudo apt install -y git mariadb-server nginx
+   - sudo mysql_secure_installation (použijte tento příkaz separátně)
+     
+     použijte tyto příkazy naráz:
    - sudo mysql -u root -p
    - CREATE DATABASE gitea;
    - GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123' -|- heslo, pod kterým se přihlásíme do gitea
    - FLUSH PRIVILEGES;
    - EXIT;
 
-4. vytvoření uživatele:
+5. vytvoření uživatele:
    - sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
 
 
    
-5. Stáhneme a nainstalujeme GItea:
+6. Stáhneme a nainstalujeme GItea:
      Provedeme pomocí příkazu wget:
            - wget -O gitea https://dl.gitea.io/gitea/1.15.6/gitea-1.15.6-linux-amd64
      Nastavíme souboru práva pro spuštění a přesunutí souboru do globálního umístění:
            - chmod +x gitea
            - sudo mv gitea /usr/local/bin/gitea
    
-6. Vytvoříme uživatele a adresářouvou strukturu:
+7. Vytvoříme uživatele a adresářouvou strukturu:
       První vytvoříme uživatele pro Gitea (s názvem "git"):
            - sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
       Nastavíme potřebnou strukturu adresáře:
@@ -49,7 +52,7 @@
            - sudo chown root:git /etc/gitea
            - sudo chmod 770 /etc/gitea
    
-7. Nastavíme systemd službu:
+8. Nastavíme systemd službu:
    Vytvoříme systemd konfigurační soubor pro Gitea:
            - sudo nano /etc/systemd/system/gitea.service
    Vložíme následující konfiguraci služby:
@@ -71,7 +74,7 @@
            [Install]
            WantedBy=multi-user.target
 
-8.
+9.
 - sudo mkdir -p /etc/gitea/custom/conf
 - sudo chown -R $USER:$USER /etc/gitea
  
