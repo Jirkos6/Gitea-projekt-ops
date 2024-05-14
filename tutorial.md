@@ -26,7 +26,7 @@
    
 
 
-4. vytvoření databáze
+4. Stáhnutí a nastavení MariaDB
    ```
    sudo apt install -y git mariadb-server nginx
    sudo mysql_secure_installation (použijte tento příkaz separátně)
