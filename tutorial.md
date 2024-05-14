@@ -13,8 +13,8 @@
    ```
          sudo apt update && sudo apt upgrade -y
      Poté nainstalujeme potřebné balíčky, včetně Gitu a SSH:
-         sudo apt install git openssh-server -y
-```
+sudo apt install git openssh-server -y
+
    
 
 
