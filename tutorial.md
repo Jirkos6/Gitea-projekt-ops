@@ -49,19 +49,19 @@
      ``` 
 10. Vytvoříme uživatele a adresářouvou strukturu:
       Nastavíme potřebnou strukturu adresáře:
-            ``` 
-            sudo mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}
-            sudo chown git:git /var/lib/gitea/{data,indexers,log}
-            sudo chmod 750 /var/lib/gitea/{data,indexers,log}
-            sudo mkdir /etc/gitea
-            sudo chown root:git /etc/gitea
-            sudo chmod 770 /etc/gitea
-            ``` 
+      ``` 
+      sudo mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}
+      sudo chown git:git /var/lib/gitea/{data,indexers,log}
+      sudo chmod 750 /var/lib/gitea/{data,indexers,log}
+      sudo mkdir /etc/gitea
+      sudo chown root:git /etc/gitea
+      sudo chmod 770 /etc/gitea
+      ``` 
 12. Nastavíme systemd službu:
    Vytvoříme systemd konfigurační soubor pro Gitea:
-            ``` 
-            sudo nano /etc/systemd/system/gitea.service
-            ``` 
+    ``` 
+    sudo nano /etc/systemd/system/gitea.service
+    ``` 
    Vložíme následující konfiguraci služby:
            [Unit]
            Description=Gitea (Git with a cup of tea)
