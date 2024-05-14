@@ -37,8 +37,8 @@
    ```
    CREATE DATABASE gitea;
    GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123'      
-   FLUSH PRIVILEGES;
-   EXIT;
+   FLUSH PRIVILEGES
+   EXIT
    ``` 
 6. vytvoření uživatele:
    ``` 
