@@ -11,37 +11,39 @@
 2. Aktualizace systému a instalace potřebných balíčků:
      Nejprve zjistíme jestli je náš Debian aktuální:
    ```
-         sudo apt update && sudo apt upgrade -y
-     Poté nainstalujeme potřebné balíčky, včetně Gitu a SSH:
-sudo apt install git openssh-server -y
+   sudo apt update && sudo apt upgrade -y
+   Poté nainstalujeme potřebné balíčky, včetně Gitu a SSH:
+   sudo apt install git openssh-server -y
 
    
 
 
 4. vytvoření databáze
-   $ sudo apt install -y git mariadb-server nginx
-   $ sudo mysql_secure_installation (použijte tento příkaz separátně)
-     
-   $ sudo mysql -u root -p
+   ```
+   sudo apt install -y git mariadb-server nginx
+   sudo mysql_secure_installation (použijte tento příkaz separátně)
+
+   ``` 
+   sudo mysql -u root -p
      použijte tyto příkazy naráz:
      CREATE DATABASE gitea;
      GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123'        heslo které použijeme pro připojení k databázi
      FLUSH PRIVILEGES;
      EXIT;
 
-5. vytvoření uživatele:
+6. vytvoření uživatele:
    $ sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
 
 
    
-6. Stáhneme a nainstalujeme GItea:
+7. Stáhneme a nainstalujeme GItea:
      Provedeme pomocí příkazu wget:
            $ wget -O gitea https://dl.gitea.io/gitea/1.15.6/gitea-1.15.6-linux-amd64
      Nastavíme souboru práva pro spuštění a přesunutí souboru do globálního umístění:
            $ chmod +x gitea
            $ sudo mv gitea /usr/local/bin/gitea
    
-7. Vytvoříme uživatele a adresářouvou strukturu:
+8. Vytvoříme uživatele a adresářouvou strukturu:
       Nastavíme potřebnou strukturu adresáře:
            $ sudo mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}
            $ sudo chown git:git /var/lib/gitea/{data,indexers,log}
@@ -50,7 +52,7 @@ sudo apt install git openssh-server -y
            $ sudo chown root:git /etc/gitea
            $ sudo chmod 770 /etc/gitea
    
-8. Nastavíme systemd službu:
+9. Nastavíme systemd službu:
    Vytvoříme systemd konfigurační soubor pro Gitea:
            $ sudo nano /etc/systemd/system/gitea.service
    Vložíme následující konfiguraci služby:
@@ -72,7 +74,7 @@ sudo apt install git openssh-server -y
            [Install]
            WantedBy=multi-user.target
 
-9.
+10.
 $ sudo mkdir -p /etc/gitea/custom/conf
 $ sudo chown -R $USER:$USER /etc/gitea
  
