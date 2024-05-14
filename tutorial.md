@@ -88,10 +88,8 @@
  ``` 
       
       Povolíme a spustíme Gitea:
-            ``` 
             sudo systemctl enable gitea
             sudo systemctl start gitea
-            ``` 
 
 9. Přístup k Gitea webu:
         - jakmile je Gitea spuštěna, dostaneme se k němu pomocí ip adresy ("ip a") a vašeho serveru na portu 3000
