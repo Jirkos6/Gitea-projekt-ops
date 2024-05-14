@@ -101,6 +101,7 @@ WantedBy=multi-user.target
  ```
  sudo systemctl enable gitea
  sudo systemctl start gitea
+ gitea
  ```
 
 9. Přístup k Gitea webu:
