@@ -15,7 +15,7 @@
      Přikázem "ip a" zjistíme ip adresu, kterou se připojíme do PuTTY ve které pokračujeme
    
 3. Aktualizace systému a instalace potřebných balíčků:
-     Nejprve zjistíme jestli je náš Debian aktuální:
+   Nejprve zjistíme jestli je náš Debian aktuální:
    ```
    sudo apt update && sudo apt upgrade -y
    ```
@@ -71,25 +71,25 @@
     sudo nano /etc/systemd/system/gitea.service
     ``` 
    Vložíme následující konfiguraci služby:
-    ```
-           [Unit]
-           Description=Gitea (Git with a cup of tea)
-           After=syslog.target
-           After=network.target
+```
+[Unit]
+Description=Gitea (Git with a cup of tea)
+After=syslog.target
+After=network.target
 
-           [Service]
-           RestartSec=2s
-           Type=simple
-           User=git
-           Group=git
-           WorkingDirectory=/var/lib/gitea/
-           ExecStart=/usr/local/bin/gitea web -c /etc/gitea/app.ini
-           Restart=always
-           Environment=USER=git HOME=/home/git GITEA_WORK_DIR=/var/lib/gitea
+[Service]
+RestartSec=2s
+Type=simple
+User=git
+Group=git
+WorkingDirectory=/var/lib/gitea/
+ExecStart=/usr/local/bin/gitea web -c /etc/gitea/app.ini
+Restart=always
+Environment=USER=git HOME=/home/git GITEA_WORK_DIR=/var/lib/gitea
 
-           [Install]
-           WantedBy=multi-user.target
-    ```
+[Install]
+WantedBy=multi-user.target
+```
 14.
  ``` 
  sudo mkdir -p /etc/gitea/custom/conf
