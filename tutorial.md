@@ -1,18 +1,26 @@
 # Gitea projekt OPS
 1. Nainstalujeme na VirtualBox SSH abysme se mohli připojit přes PuTTY, do kterého se dají kódy vkládat
      Nainstalujeme balíček openssh-server
-        $ sudo apt update && sudo apt install openssh-server
+     ```
+     sudo apt update && sudo apt install openssh-server
+     ```
      Zjistíme jestli se služba spustila
-        $ systemctl status ssh
+     ```
+     systemctl status ssh
+     ```
      Pokud nesvítí ve výpisu zeleně "active (running)" musíme ssh zapnout
-        $ systemctl start ssh
+     ```
+     systemctl start ssh
+     ```
      Přikázem "ip a" zjistíme ip adresu, kterou se připojíme do PuTTY ve které pokračujeme
    
-2. Aktualizace systému a instalace potřebných balíčků:
+3. Aktualizace systému a instalace potřebných balíčků:
      Nejprve zjistíme jestli je náš Debian aktuální:
    ```
    sudo apt update && sudo apt upgrade -y
+   ```
    Poté nainstalujeme potřebné balíčky, včetně Gitu a SSH:
+   ```
    sudo apt install git openssh-server -y
    ```
    
@@ -33,7 +41,7 @@
    ``` 
 6. vytvoření uživatele:
    ``` 
-   $ sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
+   sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
    ``` 
 
    
@@ -63,6 +71,7 @@
     sudo nano /etc/systemd/system/gitea.service
     ``` 
    Vložíme následující konfiguraci služby:
+    ```
            [Unit]
            Description=Gitea (Git with a cup of tea)
            After=syslog.target
@@ -80,7 +89,7 @@
 
            [Install]
            WantedBy=multi-user.target
-
+    ```
 14.
  ``` 
  sudo mkdir -p /etc/gitea/custom/conf
