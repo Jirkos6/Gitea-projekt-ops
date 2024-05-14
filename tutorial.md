@@ -22,39 +22,46 @@
    ```
    sudo apt install -y git mariadb-server nginx
    sudo mysql_secure_installation (použijte tento příkaz separátně)
-
-   ``` 
    sudo mysql -u root -p
-     použijte tyto příkazy naráz:
-     CREATE DATABASE gitea;
-     GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123'        heslo které použijeme pro připojení k databázi
-     FLUSH PRIVILEGES;
-     EXIT;
-
+   ```
+   ``` 
+   použijte tyto příkazy naráz:
+   CREATE DATABASE gitea;
+   GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123'        heslo které použijeme pro připojení k databázi
+   FLUSH PRIVILEGES;
+   EXIT;
+   ``` 
 6. vytvoření uživatele:
+   ``` 
    $ sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --disabled-password --home /home/git git
-
+   ``` 
 
    
-7. Stáhneme a nainstalujeme GItea:
+8. Stáhneme a nainstalujeme GItea:
      Provedeme pomocí příkazu wget:
-           $ wget -O gitea https://dl.gitea.io/gitea/1.15.6/gitea-1.15.6-linux-amd64
+     ``` 
+     wget -O gitea https://dl.gitea.io/gitea/1.15.6/gitea-1.15.6-linux-amd64
+     ``` 
      Nastavíme souboru práva pro spuštění a přesunutí souboru do globálního umístění:
-           $ chmod +x gitea
-           $ sudo mv gitea /usr/local/bin/gitea
-   
-8. Vytvoříme uživatele a adresářouvou strukturu:
+     ``` 
+     chmod +x gitea
+     sudo mv gitea /usr/local/bin/gitea
+     ``` 
+10. Vytvoříme uživatele a adresářouvou strukturu:
       Nastavíme potřebnou strukturu adresáře:
-           $ sudo mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}
-           $ sudo chown git:git /var/lib/gitea/{data,indexers,log}
-           $ sudo chmod 750 /var/lib/gitea/{data,indexers,log}
-           $ sudo mkdir /etc/gitea
-           $ sudo chown root:git /etc/gitea
-           $ sudo chmod 770 /etc/gitea
-   
-9. Nastavíme systemd službu:
+            ``` 
+            sudo mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}
+            sudo chown git:git /var/lib/gitea/{data,indexers,log}
+            sudo chmod 750 /var/lib/gitea/{data,indexers,log}
+            sudo mkdir /etc/gitea
+            sudo chown root:git /etc/gitea
+            sudo chmod 770 /etc/gitea
+            ``` 
+12. Nastavíme systemd službu:
    Vytvoříme systemd konfigurační soubor pro Gitea:
-           $ sudo nano /etc/systemd/system/gitea.service
+            ``` 
+            sudo nano /etc/systemd/system/gitea.service
+            ``` 
    Vložíme následující konfiguraci služby:
            [Unit]
            Description=Gitea (Git with a cup of tea)
@@ -74,14 +81,17 @@
            [Install]
            WantedBy=multi-user.target
 
-10.
-$ sudo mkdir -p /etc/gitea/custom/conf
-$ sudo chown -R $USER:$USER /etc/gitea
- 
+14.
+ ``` 
+ sudo mkdir -p /etc/gitea/custom/conf
+ sudo chown -R $USER:$USER /etc/gitea
+ ``` 
       
       Povolíme a spustíme Gitea:
-           $ sudo systemctl enable gitea
-           $ sudo systemctl start gitea
+            ``` 
+            sudo systemctl enable gitea
+            sudo systemctl start gitea
+            ``` 
 
 9. Přístup k Gitea webu:
         - jakmile je Gitea spuštěna, dostaneme se k němu pomocí ip adresy ("ip a") a vašeho serveru na portu 3000
