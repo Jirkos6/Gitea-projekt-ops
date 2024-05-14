@@ -1,4 +1,4 @@
-# Gitea projekt sítě
+# Gitea projekt OPS
 1. Nainstalujeme na VirtualBox SSH abysme se mohli připojit přes PuTTY, do kterého se dají kódy vkládat
      Nainstalujeme balíček openssh-server
         - sudo apt update && sudo apt install openssh-server
