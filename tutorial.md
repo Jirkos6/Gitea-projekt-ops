@@ -32,7 +32,7 @@
    sudo mysql_secure_installation (použijte tento příkaz separátně)
    sudo mysql -u root -p
    ```
-   ``` 
+   
    použijte tyto příkazy naráz:
    ```
    CREATE DATABASE gitea;
