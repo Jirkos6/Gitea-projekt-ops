@@ -29,7 +29,7 @@
 4. Stáhnutí a nastavení MariaDB
    ```
    sudo apt install -y git mariadb-server nginx
-   sudo mysql_secure_installation (použijte tento příkaz separátně)
+   sudo mysql_secure_installation
    sudo mysql -u root -p
    ```
    
