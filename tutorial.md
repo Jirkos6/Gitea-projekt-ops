@@ -34,8 +34,9 @@
    ```
    ``` 
    použijte tyto příkazy naráz:
+   ```
    CREATE DATABASE gitea;
-   GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123'        heslo které použijeme pro připojení k databázi
+   GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123'      
    FLUSH PRIVILEGES;
    EXIT;
    ``` 
@@ -90,7 +91,7 @@ Environment=USER=git HOME=/home/git GITEA_WORK_DIR=/var/lib/gitea
 [Install]
 WantedBy=multi-user.target
 ```
-14.
+
  ``` 
  sudo mkdir -p /etc/gitea/custom/conf
  sudo chown -R $USER:$USER /etc/gitea
