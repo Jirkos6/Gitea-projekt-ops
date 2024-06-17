@@ -1,5 +1,5 @@
 # Gitea projekt OPS
-1. Nainstalujeme na VirtualBox SSH abysme se mohli připojit přes PuTTY, do kterého se dají kódy vkládat
+1. Nainstalujeme na VirtualBox SSH abychom se mohli připojit přes PuTTY, do kterého se dají příkazy vkládat
      Nainstalujeme balíček openssh-server
         - sudo apt update && sudo apt install openssh-server
      Zjistíme jestli se služba spustila
@@ -23,7 +23,7 @@
    - sudo mysql_secure_installation (použijte tento příkaz separátně)
      
      sudo mysql -u root -p
-     použijte tyto příkazy naráz:
+     použijte tyto příkazy najednou:
      CREATE DATABASE gitea;
      GRANT ALL PRIVILEGES ON gitea.*TO 'gitea'@'localhost' IDENTIFIED BY 'test123' -|- heslo, pod kterým se přihlásíme do gitea
      FLUSH PRIVILEGES;
@@ -80,8 +80,9 @@
  
       
       Povolíme a spustíme Gitea:
-           - sudo systemctl enable gitea
-           - sudo systemctl start gitea
+            - sudo systemctl enable gitea
+            - sudo systemctl start gitea
+            - gitea
 
 9. Přístup k Gitea webu:
         - jakmile je Gitea spuštěna, dostaneme se k němu pomocí ip adresy ("ip a") a vašeho serveru na portu 3000
